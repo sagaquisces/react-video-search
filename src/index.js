@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     const { videos } = this.state
     return (
-      <div>
+      <div className='w3-container'>
         <SearchBar />
         <VideoList videos={videos} />
       </div>

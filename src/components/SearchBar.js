@@ -10,10 +10,12 @@ class SearchBar extends Component {
   render() {
     return (
       <div>
-        <input
-          value={this.state.term}
-          onChange={e => this.setState({ term: e.target.value })}
-        />
+        <p>
+          <input
+            value={this.state.term}
+            onChange={e => this.setState({ term: e.target.value })}
+          />
+        </p>
       </div>
     )
   }

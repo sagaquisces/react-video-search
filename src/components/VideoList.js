@@ -3,13 +3,15 @@ import VideoListItem from './VideoListItem'
 
 const VideoList = ({ videos }) => {
   const videoItems = videos.map(video =>
-    <VideoListItem video={video} />
+    <VideoListItem key={video.etag} video={video} />
   )
 
   return (
-    <ul className='w3-ul'>
-      {videoItems}
-    </ul>
+    <table className='w3-table w3-bordered w3-card-4'>
+      <tbody>
+        {videoItems}
+      </tbody>
+    </table>
   )
 }
 
