@@ -4,6 +4,7 @@ import YTSearch from 'youtube-api-search'
 import 'w3-css/w3.css'
 
 import SearchBar from './components/SearchBar'
+import VideoList from './components/VideoList'
 
 
 const API_KEY = 'AIzaSyBJkjEBpcKIJesdlY-Mt_1WQEmoJUxLzog'
@@ -19,8 +20,12 @@ class App extends Component {
     YTSearch({ key: API_KEY, term: 'Mahler' }, videos => this.setState({ videos }))
   }
   render() {
+    const { videos } = this.state
     return (
-      <SearchBar />
+      <div>
+        <SearchBar />
+        <VideoList videos={videos} />
+      </div>
     )
   }
 }
