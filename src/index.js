@@ -24,10 +24,15 @@ class App extends Component {
   render() {
     const { videos } = this.state
     return (
-      <div className='w3-container'>
+      <div className='w3-row w3-container'>
         <SearchBar />
-        <VideoList videos={videos} />
-        <VideoDetail video={videos[0]} />
+        <div className='w3-twothird'>
+          <VideoDetail video={videos[0]} />
+        </div>
+        <div className='w3-third'>
+          <VideoList videos={videos} />
+        </div>
+
       </div>
     )
   }
