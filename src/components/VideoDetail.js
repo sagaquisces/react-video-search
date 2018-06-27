@@ -8,7 +8,7 @@ const VideoDetail = ({ video }) => {
   const url = `https://www.youtube.com/embed/${videoId}`
 
   return (
-    <div className='w3-panel w3-light-grey'>
+    <div className='w3-light-grey'>
       <div className='hs-responsive-embed'>
         <iframe className='video' src={url}></iframe>
       </div>
