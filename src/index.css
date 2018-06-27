@@ -1,4 +1,10 @@
-.hs-responsive-embed { 
+input:focus {
+  outline-color: white;
+  background-color: linen;
+}
+
+
+.hs-responsive-embed {
 position: relative;
 height: 0;
 overflow: hidden;

@@ -12,8 +12,10 @@ class SearchBar extends Component {
       <div>
         <p>
           <input
+            className='w3-input'
             value={this.state.term}
             onChange={e => this.setState({ term: e.target.value })}
+            placeholder='Search...'
           />
         </p>
       </div>
