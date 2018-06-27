@@ -1,15 +1,18 @@
 import React from 'react'
 
-const VideoListItem = ({ video }) => {
+const VideoListItem = ({ video, onVideoClick }) => {
   const imageUrl = video.snippet.thumbnails.default.url
 
   return (
-    <tr>
-      <th><img src={imageUrl} className='w3-bar-item w3-hide-small' /></th>
-      <th>
-        <span className='w3-large'>{video.snippet.title}</span>
-      </th>
-    </tr>
+    <li
+      className='w3-hover-red'
+      onClick={() => onVideoClick(video)}
+    >
+      <div className='w3-cell w3-hide-small'>
+        <img src={imageUrl}  />
+      </div>
+      <div className='w3-large w3-cell w3-container'>{video.snippet.title}</div>
+    </li>
   )
 }
 

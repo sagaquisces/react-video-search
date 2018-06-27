@@ -16,21 +16,30 @@ class App extends Component {
     super(props)
 
     this.state = {
-      videos: []
+      videos: [],
+      selectedVideo: null,
     }
 
-    YTSearch({ key: API_KEY, term: 'Mahler' }, videos => this.setState({ videos }))
+    YTSearch({ key: API_KEY, term: 'Mahler' }, (videos) => {
+      this.setState({
+        videos,
+        selectedVideo: videos[0],
+      })
+    })
   }
   render() {
     const { videos } = this.state
     return (
-      <div className='w3-row w3-container'>
+      <div className='w3-row-padding w3-container'>
         <SearchBar />
-        <div className='w3-twothird'>
-          <VideoDetail video={videos[0]} />
+        <div className='w3-half'>
+          <VideoDetail video={this.state.selectedVideo} />
         </div>
-        <div className='w3-third'>
-          <VideoList videos={videos} />
+        <div className='w3-half'>
+          <VideoList
+            onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
+            videos={this.state.videos}
+          />
         </div>
 
       </div>

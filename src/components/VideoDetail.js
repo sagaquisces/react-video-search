@@ -8,11 +8,11 @@ const VideoDetail = ({ video }) => {
   const url = `https://www.youtube.com/embed/${videoId}`
 
   return (
-    <div>
+    <div className='w3-card'>
       <div className='hs-responsive-embed'>
         <iframe className='video' src={url}></iframe>
       </div>
-      <div>
+      <div className='w3-container'>
         <div>{video.snippet.title}</div>
         <div>{video.snippet.description}</div>
       </div>
